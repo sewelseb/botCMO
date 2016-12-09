@@ -26,8 +26,11 @@ class ArticlesManager
         {
             //var_dump($item);
             $article = new Article();
-            $article->setId($item);
-            $article->setTitle($item['title']);
+
+            $article->setId($item['id']);
+            //print_r($item['title']['rendered']);
+            $article->setTitle($item['title']['rendered']);
+            $article->setCategory(explode('ÔÇô', $item['title']['rendered'])[0]);
 
             $articles[$i]=$article;
             $i++;

@@ -11,6 +11,7 @@ class Article
     private $_id;
     private $_title;
     private $_image;
+    private $_category;
 
     /**
      * @return mixed
@@ -58,6 +59,22 @@ class Article
     public function setImage($image)
     {
         $this->_image = $image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->_category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->_category = $category;
     }
 
 

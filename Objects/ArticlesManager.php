@@ -30,7 +30,7 @@ class ArticlesManager
             $article->setId($item['id']);
             //print_r($item['title']['rendered']);
             $article->setTitle($item['title']['rendered']);
-            $article->setCategory(explode('ÔÇô', $item['title']['rendered'])[0]);
+            $article->setCategory(explode('-', $item['title']['rendered'])[0]);
 
             $articles[$i]=$article;
             $i++;

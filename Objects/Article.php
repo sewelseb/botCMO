@@ -9,9 +9,11 @@
 class Article
 {
     private $_id;
+    private $_idWP;
     private $_title;
     private $_image;
     private $_category;
+    private $_tags;
 
     /**
      * @return mixed
@@ -76,6 +78,40 @@ class Article
     {
         $this->_category = $category;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->_tags;
+    }
+
+    /**
+     * @param mixed $tags
+     */
+    public function setTags($tags)
+    {
+        $this->_tags = $tags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdWP()
+    {
+        return $this->_idWP;
+    }
+
+    /**
+     * @param mixed $idWP
+     */
+    public function setIdWP($idWP)
+    {
+        $this->_idWP = $idWP;
+    }
+
+
 
 
 }

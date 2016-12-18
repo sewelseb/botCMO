@@ -9,8 +9,17 @@
 
 require_once ('Article.php');
 
+
 class ArticlesManager
 {
+    private $_bdd;
+    private $_articles;
+
+    function __construct(PDO $bdd)
+    {
+        $this->_bdd = $bdd;
+    }
+
     public function getPostsFromMOC()
     {
         $ch = curl_init();
@@ -27,14 +36,33 @@ class ArticlesManager
             //var_dump($item);
             $article = new Article();
 
-            $article->setId($item['id']);
+            //$article->setId($item['id']);
             //print_r($item['title']['rendered']);
             $article->setTitle($item['title']['rendered']);
             $article->setCategory(explode('-', $item['title']['rendered'])[0]);
+            $article->setIdWP($item['id']);
 
             $articles[$i]=$article;
             $i++;
         }
         var_dump($articles);
+
+        $this->_articles = $articles;
+    }
+
+    public function insertArticlesInDB()
+    {
+        foreach ($this->_articles as $article)
+        {
+            $this->_bdd->exec('INSERT INTO article
+                                (title, image, category, tags, id_wp)
+                                VALUE (\''.$article->getTitle().'\', \''.$article->getImage().'\', \''.$article->getCategory().'\',\''.$article->getTags().'\', \''.$article->getidWP().'\')
+            ');
+        }
+    }
+
+    public function getMaxId()
+    {
+        $this->_bdd->exec('SELECT max(wp_id) FROM article');
     }
 }

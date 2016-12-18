@@ -3,6 +3,7 @@
 
     date_default_timezone_set('GMT');
 
+    require_once ('connexionDB.php');
     require_once('Objects/TwitterBot.php');
 
     header('Content-Type: text/html; charset=utf-8');
@@ -17,6 +18,6 @@
 
     //$twitter->test();
 
-    $twitter->postMOC();
+    $twitter->postMOC($bdd);
 
 ?>

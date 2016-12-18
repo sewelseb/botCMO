@@ -178,8 +178,9 @@ class TwitterBot
         }
     }
 
-    public function postMOC(){
-        $articleManager = new ArticlesManager();
+    public function postMOC(PDO $bdd){
+        $articleManager = new ArticlesManager($bdd);
         $articleManager->getPostsFromMOC();
+        $articleManager->insertArticlesInDB();
     }
 }

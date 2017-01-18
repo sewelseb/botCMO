@@ -14,6 +14,7 @@ class ArticlesManager
 {
     private $_bdd;
     private $_articles;
+    private $_maxWPId;
 
     function __construct(PDO $bdd)
     {
@@ -41,28 +42,72 @@ class ArticlesManager
             $article->setTitle($item['title']['rendered']);
             $article->setCategory(explode('-', $item['title']['rendered'])[0]);
             $article->setIdWP($item['id']);
+            $this->getTagsFromMOC( $item['tags'][0]);
+            $article->setTags(implode(',', $item['tags']));
 
             $articles[$i]=$article;
             $i++;
         }
-        var_dump($articles);
+        //var_dump($articles);
 
         $this->_articles = $articles;
     }
 
+    public function getTagsFromMOC($tagId)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://lecourrierdumaghrebetdelorient.info/wp-json/wp/v2/tags/".$tagId);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $parsed_json = curl_exec($ch);
+        $tag = json_decode($parsed_json, true);
+
+        echo('tags:');
+        var_dump($tag['name']);
+
+
+    }
+
+
     public function insertArticlesInDB()
     {
+        $this->getMaxId();
         foreach ($this->_articles as $article)
         {
-            $this->_bdd->exec('INSERT INTO article
+            if($this->_maxWPId<intval($article->getidWP()))
+            {
+                $this->_bdd->exec('INSERT INTO article
                                 (title, image, category, tags, id_wp)
                                 VALUE (\''.$article->getTitle().'\', \''.$article->getImage().'\', \''.$article->getCategory().'\',\''.$article->getTags().'\', \''.$article->getidWP().'\')
-            ');
+                ');
+            }
         }
     }
 
     public function getMaxId()
     {
-        $this->_bdd->exec('SELECT max(wp_id) FROM article');
+        $res = $this->_bdd->query('SELECT MAX(id_wp) FROM article');
+
+        if(is_object($res))
+        {
+            while ($max=$res->fetch(PDO::FETCH_ASSOC))
+            {
+                //var_dump(intval($max['MAX(id_wp)']));
+                $this->_maxWPId=intval($max['MAX(id_wp)']);
+            }
+        }
+    }
+
+    public function selectPostForTwitter()
+    {
+        $res = $this->_bdd->query('SELECT MIN(id_wp) FROM article WHERE ');
+
+        if(is_object($res))
+        {
+            while ($max=$res->fetch(PDO::FETCH_ASSOC))
+            {
+                //var_dump(intval($max['MAX(id_wp)']));
+
+            }
+        }
     }
 }

@@ -44,6 +44,7 @@ class ArticlesManager
             $article->setIdWP($item['id']);
             $this->getTagsFromMOC( $item['tags'][0]);
             $article->setTags(implode(',', $item['tags']));
+            $article->setImage($item['featured_media']);
 
             $articles[$i]=$article;
             $i++;
@@ -61,10 +62,26 @@ class ArticlesManager
         $parsed_json = curl_exec($ch);
         $tag = json_decode($parsed_json, true);
 
-        echo('tags:');
-        var_dump($tag['name']);
+        //echo('tags:');
+
+        return $tag;
 
 
+    }
+
+    public function getMediaFromMOC($mediaId)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://lecourrierdumaghrebetdelorient.info/wp-json/wp/v2/media/".$mediaId);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $parsed_json = curl_exec($ch);
+        $media = json_decode($parsed_json, true);
+
+        //var_dump($mediaId);
+
+        //var_dump($media);
+
+        return $media['guid']['rendered'];
     }
 
 
@@ -109,5 +126,47 @@ class ArticlesManager
 
             }
         }
+    }
+
+    public function getArticlesToPost()
+    {
+        $res = $this->_bdd->query('SELECT * FROM article WHERE posted = 0 ORDER BY id ASC');
+
+        $articleStock = array();
+        if(is_object($res))
+        {
+            while ($articleTab=$res->fetch(PDO::FETCH_ASSOC))
+            {
+                $article = new Article();
+                $article->setId($articleTab['id']);
+                $article->setTitle($articleTab['title']);
+                $article->setImage($articleTab['image']);
+                $article->setCategory($articleTab['category']);
+                $article->setTags($articleTab['tags']);
+                $article->setIdWP($articleTab['id_wp']);
+                $article->setPosted($articleTab['title']);
+
+                $articleStock[] = $article;
+
+            }
+        }
+
+        return $articleStock;
+    }
+
+    public function prepareArticleForPosting(Article $article)
+    {
+        $article->setTags(explode(',', $article->getTags()));
+
+        $tags = array();
+        foreach ($article->getTags() as $tagId)
+        {
+            $tags[] = $this->getTagsFromMOC($tagId)['name'];
+        }
+        $article->setTags($tags);
+
+        $article->setImage($this->getMediaFromMOC($article->getImage()));
+
+        return $article;
     }
 }

@@ -8,7 +8,7 @@
 
     header('Content-Type: text/html; charset=utf-8');
 
-    $twitter = new TwitterBot('kLy11JKimycjBMyNBapPbzCuo', 'RpVjXnHi7hsBFYah2pp09LlgNjrdUnrNPMwrECBvnABnesInCJ');
+    $twitter = new TwitterBot('2463782784-2sW0z6FysgOXl3aLBFqGCkmdw5yFLvG2oGh4tQI', 'OjLa6xFyozTiPGKVAtt3AZ5nXoFHR4PPunPGIlMt9N5Wh');
 
     //$twitter->setToken('732606536518934528-DwDlP9UVEWDNutDI3kUd7txLyKeQy7a', '2PLNeBlCRFeQ8JgADECi3QBv9ssvXh1wUrdiLObBNB4Ld');
 
@@ -19,5 +19,15 @@
     //$twitter->test();
 
     $twitter->postMOC($bdd);
+    $articlesManager = new ArticlesManager($bdd);
+    $stockOfArticles = $articlesManager->getArticlesToPost();
+
+
+
+    $articleToPost = $articlesManager->prepareArticleForPosting($stockOfArticles[0]);
+
+    var_dump($articleToPost->getImage());
+
+    $twitter->buildPost($articleToPost);
 
 ?>

@@ -14,6 +14,7 @@ class Article
     private $_image;
     private $_category;
     private $_tags;
+    private $_posted = 0;
 
     /**
      * @return mixed
@@ -109,6 +110,22 @@ class Article
     public function setIdWP($idWP)
     {
         $this->_idWP = $idWP;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosted()
+    {
+        return $this->_posted;
+    }
+
+    /**
+     * @param int $posted
+     */
+    public function setPosted($posted)
+    {
+        $this->_posted = $posted;
     }
 
 

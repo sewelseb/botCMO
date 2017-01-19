@@ -27,9 +27,9 @@ class TwitterBot
 
     public function __construct($key, $secret){
 
-        //$this->oauth = new OAuth($key, $secret, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
+        $this->oauth = new OAuth($key, $secret, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
 
-        //$this->oauth->disableSSLChecks();
+        $this->oauth->disableSSLChecks();
 
     }
 
@@ -182,5 +182,23 @@ class TwitterBot
         $articleManager = new ArticlesManager($bdd);
         $articleManager->getPostsFromMOC();
         $articleManager->insertArticlesInDB();
+    }
+
+    public function buildPost(Article $article)
+    {
+        $tags = ' #MOC';
+        foreach ($article->getTags() as $tag)
+        {
+            $tags = $tags." #".$tag;
+        }
+        $array = array(
+
+            'status' => $article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags
+
+        );
+
+        var_dump($array);
+
+        $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
     }
 }

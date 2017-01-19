@@ -2,11 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c781aae9-bea7-4061-8444-c4df22286cb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Article.php" afterPath="$PROJECT_DIR$/Objects/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/ArticlesManager.php" afterPath="$PROJECT_DIR$/Objects/ArticlesManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/TwitterBot.php" afterPath="$PROJECT_DIR$/Objects/TwitterBot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.php" afterPath="$PROJECT_DIR$/main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Autoloader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ClientAssertionType/ClientAssertionTypeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ClientAssertionType/HttpBasic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/AuthorizeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/AuthorizeControllerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/ResourceController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/ResourceControllerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/TokenController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Controller/TokenControllerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Encryption/EncryptionInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Encryption/FirebaseJwt.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Encryption/Jwt.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/AuthorizationCode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/ClientCredentials.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/GrantTypeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/JwtBearer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/RefreshToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/GrantType/UserCredentials.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Controller/AuthorizeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Controller/AuthorizeControllerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Controller/UserInfoController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Controller/UserInfoControllerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/GrantType/AuthorizationCode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/AuthorizationCode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/AuthorizationCodeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/CodeIdToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/CodeIdTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/IdToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/IdTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/IdTokenToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/ResponseType/IdTokenTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Storage/AuthorizationCodeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/OpenID/Storage/UserClaimsInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Request.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/RequestInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Response.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/AccessToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/AccessTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/AuthorizationCode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/AuthorizationCodeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/JwtAccessToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ResponseType/ResponseTypeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Scope.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/ScopeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Server.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/AccessTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/AuthorizationCodeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/Cassandra.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/ClientCredentialsInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/ClientInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/CouchbaseDB.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/DynamoDB.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/JwtAccessToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/JwtAccessTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/JwtBearerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/Memory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/Mongo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/MongoDB.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/Pdo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/PublicKeyInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/Redis.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/RefreshTokenInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/ScopeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/Storage/UserCredentialsInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/TokenType/Bearer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/TokenType/Mac.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OAuth2/TokenType/TokenTypeInterface.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwitterBot.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TwitterBot.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Objects/TwitterBot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OAuth2/Server.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,8 +174,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>var</find>
-      <find>run</find>
       <find>vard</find>
+      <find>run</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,6 +267,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="botCMO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="botCMO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OAuth2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -203,6 +290,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\botCMO\OAuth2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\botCMO\OAuth2" />
+      <recent name="D:\wamp64\www\botCMO" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -291,12 +387,12 @@
       <workItem from="1482180589850" duration="629000" />
       <workItem from="1482223962853" duration="679000" />
       <workItem from="1484759349319" duration="2334000" />
-      <workItem from="1484830536902" duration="5358000" />
+      <workItem from="1484830536902" duration="5904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18090000" />
+    <option name="totallyTimeSpent" value="18636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -323,14 +419,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Objects/ArticlesManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
@@ -770,8 +858,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/TwitterBot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/Server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

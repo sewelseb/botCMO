@@ -209,6 +209,14 @@ class TwitterBot
 
         var_dump($array);
         if ($this->verifyAccountWorks()){
+            try{
+                $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
+            }
+            catch (OAuthException $ex)
+            {
+                echo 'ERROR: ' . $ex->lastResponse;
+                die();
+            }
 
         }
         else
@@ -216,6 +224,6 @@ class TwitterBot
             echo('account twitter do not work');
         }
 
-        $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
+
     }
 }

@@ -208,6 +208,13 @@ class TwitterBot
         );
 
         var_dump($array);
+        if ($this->verifyAccountWorks()){
+
+        }
+        else
+        {
+            echo('account twitter do not work');
+        }
 
         $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
     }

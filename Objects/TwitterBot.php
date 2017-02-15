@@ -196,14 +196,21 @@ class TwitterBot
 
     public function buildPost(Article $article)
     {
+        $status = $article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId();
         $tags = ' #MOC';
+
         foreach ($article->getTags() as $tag)
         {
-            $tags = $tags." #".$tag;
+            if(strlen($article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags." #".$tag))
+            {
+                $tags = $tags." #".$tag;
+            }
+
         }
+        $status = $article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags;
         $array = array(
 
-            'status' => $article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags
+            'status' => $status
 
         );
 

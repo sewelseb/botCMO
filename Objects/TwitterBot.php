@@ -28,7 +28,14 @@ class TwitterBot
 
     public function __construct($key, $secret){
 
-        $this->oauth = new OAuth($key, $secret, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
+        try{
+            $this->oauth = new OAuth($key, $secret, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
+        }
+        catch (Exception $e)
+        {
+            var_dump($e);
+        }
+
 
         $this->oauth->disableSSLChecks();
 

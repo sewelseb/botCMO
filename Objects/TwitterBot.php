@@ -201,7 +201,7 @@ class TwitterBot
 
         foreach ($article->getTags() as $tag)
         {
-            if(strlen($article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags." #".$tag))
+            if(strlen($article->getTitle().' http:\/\/lecourrierdumaghrebetdelorient.info\/?p='.$article->getId().$tags." #".$tag)<140)
             {
                 $tags = $tags." #".$tag;
             }

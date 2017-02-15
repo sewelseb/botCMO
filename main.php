@@ -10,7 +10,7 @@
 
     $twitter = new TwitterBot('2463782784-2sW0z6FysgOXl3aLBFqGCkmdw5yFLvG2oGh4tQI', 'OjLa6xFyozTiPGKVAtt3AZ5nXoFHR4PPunPGIlMt9N5Wh');
 
-    //$twitter->setToken('732606536518934528-DwDlP9UVEWDNutDI3kUd7txLyKeQy7a', '2PLNeBlCRFeQ8JgADECi3QBv9ssvXh1wUrdiLObBNB4Ld');
+    $twitter->setToken('2463782784-2sW0z6FysgOXl3aLBFqGCkmdw5yFLvG2oGh4tQI', 'OjLa6xFyozTiPGKVAtt3AZ5nXoFHR4PPunPGIlMt9N5Wh');
 
     //$twitter->addReply(array('paintball%20playlist -RT'),'(.*)~i','replyBot');
 

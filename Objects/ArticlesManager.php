@@ -169,4 +169,11 @@ class ArticlesManager
 
         return $article;
     }
+
+    public function setPostAsPublished(Article $article)
+    {
+        $this->_bdd->exec('UPDATE article
+                            SET posted=1
+                            WHERE id='.$article->getId());
+    }
 }

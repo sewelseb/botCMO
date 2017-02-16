@@ -30,4 +30,6 @@
 
     $twitter->buildPost($articleToPost);
 
+    $articlesManager->setPostAsPublished($articleToPost);
+
 ?>

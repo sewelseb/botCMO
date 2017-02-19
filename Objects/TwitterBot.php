@@ -199,7 +199,7 @@ class TwitterBot
         $article->setTitle(str_replace('&#038;', '', $article->getTitle()));
         $article->setTitle(str_replace('&#8211;', '', $article->getTitle()));
         $status = $article->getTitle().' http://lecourrierdumaghrebetdelorient.info/?p='.$article->getIdWP();
-        $tags = ' #MOC';
+        $tags = ' #MAGORIENT';
 
         foreach ($article->getTags() as $tag)
         {

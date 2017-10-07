@@ -24,14 +24,16 @@ class TwitterBot
     protected $url_token = 'https://twitter.com/oauth/request_token';
     protected $url_token_access = 'https://twitter.com/oauth/access_token';
     protected $url_auth = 'http://twitter.com/oauth/authorize';
+    protected $codebird;
 
 
 
-    public function __construct($key, $secret){
+    public function __construct($cb){
 
         try{
             //$this->oauth = new OAuth($key, $secret, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
-            $this->oauth = new OAuth($key, $secret);
+            //$this->oauth = new OAuth($key, $secret);
+            $this->codebird = $cb;
         }
         catch (Exception $e)
         {
@@ -210,28 +212,34 @@ class TwitterBot
 
         }
         $status = $status.$tags;
-        $array = array(
+//        $array = array(
+//
+//            'status' => $status
+//
+//        );
 
-            'status' => $status
-
+        $params = array(
+            'status' => $status,
+            'media[]' => $article->getImage()
         );
 
-        var_dump($array);
-        if ($this->verifyAccountWorks()){
-            try{
-                $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
-            }
-            catch (OAuthException $ex)
-            {
-                echo 'ERROR: ' . $ex->lastResponse;
-                die();
-            }
-
-        }
-        else
-        {
-            echo('account twitter do not work');
-        }
+        var_dump($params);
+        $reply = $this->codebird->statuses_updateWithMedia($params);
+//        if ($this->verifyAccountWorks()){
+//            try{
+//                $this->oauth->fetch($this->url_update, $array, OAUTH_HTTP_METHOD_POST);
+//            }
+//            catch (OAuthException $ex)
+//            {
+//                echo 'ERROR: ' . $ex->lastResponse;
+//                die();
+//            }
+//
+//        }
+//        else
+//        {
+//            echo('account twitter do not work');
+//        }
 
 
     }

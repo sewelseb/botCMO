@@ -128,7 +128,10 @@ class Article
         $this->_posted = $posted;
     }
 
-
+    public function downloadImage()
+    {
+        file_put_contents("/images/tempImage", file_get_contents($this->getImage()));
+    }
 
 
 }

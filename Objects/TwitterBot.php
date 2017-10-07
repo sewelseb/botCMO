@@ -41,7 +41,7 @@ class TwitterBot
         }
 
 
-        $this->oauth->disableSSLChecks();
+        //$this->oauth->disableSSLChecks();
 
     }
 
